@@ -17,10 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from hexlet_django_blog import views
-from .views import IndexView
 
 urlpatterns = [
-    path('', IndexView.as_view(), name='index'),
+    path('', views.redirect_to_article, name='index_redirect'),
     path('articles/', include('hexlet_django_blog.article.urls')),
     path('about/', views.about),
     path('admin/', admin.site.urls),
