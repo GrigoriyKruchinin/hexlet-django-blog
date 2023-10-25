@@ -12,3 +12,6 @@ def redirect_to_article(request):
     redirect_url = reverse('article', args=('python', 42))
     # Используем функцию redirect для выполнения перенаправления
     return redirect(redirect_url)
+
+def index(request):
+    return render(request, 'index.html')
