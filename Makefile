@@ -29,3 +29,6 @@ migrate:
 
 repl:
 	python manage.py shell
+
+admin:
+	python manage.py createsuperuser
