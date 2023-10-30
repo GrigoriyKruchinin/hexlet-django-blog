@@ -5,5 +5,12 @@
     {% for article in articles %}
         <a href="{% url 'article_view' id=article.id %}">{{ article.name }}</a>
         <div>{{ article.body|slice:":100" }}...</div>
+        <form method="get" action="{% url 'articles_update' id=article.id %}">
+            <button type="submit">Редактировать</button>
+        </form>
+        <form action="{% url 'articles_delete' article.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="Удалить">
+        </form>
     {% endfor %}
 {% endblock %}
